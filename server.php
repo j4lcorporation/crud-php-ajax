@@ -16,7 +16,7 @@ if (!empty($_GET["all"])) {
     }
 }
 
-//On traite la requete : INSERT INTO
+//On traite la requete : INSERT
 if (!empty($_POST['insert'])) {
     $prenom = $_POST['prenom'];
     $email = $_POST['email'];
@@ -32,7 +32,7 @@ if (!empty($_POST['insert'])) {
     }
 }
 
-//On traite la requete : INSERT INTO
+//On traite la requete : UPDATE
 if (!empty($_POST['update'])) {
     $prenom = $_POST['prenom'];
     $email = $_POST['email'];
@@ -49,7 +49,7 @@ if (!empty($_POST['update'])) {
     }
 }
 
-//On traite la requete : INSERT INTO
+//On traite la requete : DELETE
 if (!empty($_POST['delete'])) {
     $id = $_POST['id'];
 
