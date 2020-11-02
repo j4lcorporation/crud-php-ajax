@@ -31,3 +31,20 @@ if (!empty($_POST['insert'])) {
         $exception->getMessage();
     }
 }
+
+//On traite la requete : INSERT INTO
+if (!empty($_POST['update'])) {
+    $prenom = $_POST['prenom'];
+    $email = $_POST['email'];
+    $ville = $_POST['ville'];
+    $id = $_POST['id'];
+
+    $requete = "update stagiaire set prenom = ?, email= ?, ville= ? where id = ?";
+
+    try {
+        $requetePreparee = $connexion->prepare($requete);
+        $requetePreparee->execute([$prenom, $email, $ville, $id]);
+    } catch (Exception $exception) {
+        $exception->getMessage();
+    }
+}
