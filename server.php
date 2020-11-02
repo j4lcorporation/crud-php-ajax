@@ -48,3 +48,17 @@ if (!empty($_POST['update'])) {
         $exception->getMessage();
     }
 }
+
+//On traite la requete : INSERT INTO
+if (!empty($_POST['delete'])) {
+    $id = $_POST['id'];
+
+    $requete = "delete from stagiaire where id = ?";
+
+    try {
+        $requetePreparee = $connexion->prepare($requete);
+        $requetePreparee->execute([$id]);
+    } catch (Exception $exception) {
+        $exception->getMessage();
+    }
+}

@@ -1,51 +1,47 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .container .titre-page {
-    background-color: #0d47a1;
+  background-color: #0d47a1;
 }
-
 .container .monForm {
-    margin-top: 2rem;
-    width: 40%;
-    border: 1px solid #cfd8dc;
+  margin-top: 2rem;
+  width: 40%;
+  border: 1px solid #cfd8dc;
 }
-
 .container .monForm .titreForm {
-    text-align: center;
-    padding: 1rem;
-    color: white;
-    background-color: #0d47a1;
-    text-transform: uppercase;
-    font-size: 1.3rem;
+  text-align: center;
+  padding: 1rem;
+  color: white;
+  background-color: #0d47a1;
+  text-transform: uppercase;
+  font-size: 1.3rem;
 }
-
 .container .monForm form {
-    margin: 1rem 2rem;
+  margin: 1rem 2rem;
 }
-
 .container .monForm form .form-control, .container .monForm form .btn {
-    border-radius: 0;
+  border-radius: 0;
 }
-
 .container .monForm form .btn-valider {
-    background-color: #0d47a1;
-    color: white;
+  background-color: #0d47a1;
+  color: white;
 }
-
 .container #stagiaires .btn-valider {
-    background-color: #0d47a1;
-    color: white;
-    border-radius: 0;
-    margin-bottom: 0.5rem;
+  background-color: #0d47a1;
+  color: white;
+  border-radius: 0;
+  margin-bottom: 0.5rem;
 }
-
 .container #stagiaires .table thead {
-    background-color: #0d47a1;
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
+  background-color: #0d47a1;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+.container #stagiaires .table td, .container #stagiaires .table th {
+  border: 1px solid #cfd8dc;
 }
 
 /*# sourceMappingURL=app.css.map */

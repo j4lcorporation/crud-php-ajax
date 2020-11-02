@@ -39,7 +39,7 @@ function allStagiaires() {
             $("#stagiaires-body").append(
                 `
                 <tr>
-                    <th scope="row">${stagiaire.id}</th>
+                    <th scope="row" class="text-center">${stagiaire.id}</th>
                     <td class="prenom">${stagiaire.prenom}</td>
                     <td class="email">${stagiaire.email}</td>
                     <td class="ville">${stagiaire.ville}</td>
@@ -49,7 +49,7 @@ function allStagiaires() {
                         <span>
                     </td>
                     <td class="h3 text-danger text-center">
-                        <span  id="supprimer-${stagiaire.id}">
+                        <span id="supprimer-${stagiaire.id}" onclick="supprimer(${stagiaire.id})">
                             <ion-icon name="trash-outline"></ion-icon>                        
                         </span>
                     </td>
@@ -58,6 +58,7 @@ function allStagiaires() {
             )
         });
     });
+    $("#stagiaires").show();
 }
 
 /**
@@ -92,16 +93,20 @@ function formAjout() {
     $("#monForm").show();
     $("#btn-modifier").hide();
     $("#btn-valider").show();
+    $("#stagiaires").hide();
 
     $("#prenom").val('');
     $("#email").val('');
     $("#ville").val('');
+
+
 }
 
 function formModifier() {
     $("#monForm").show();
     $("#btn-valider").hide();
     $("#btn-modifier").show();
+    $("#stagiaires").hide();
 }
 
 function edit(id) {
@@ -117,6 +122,9 @@ function edit(id) {
     $("#ville").val(ville);
 }
 
+/**
+ * Permet de mofifier un stagiaire en BDD
+ */
 function updateStagiaire() {
     //On recupere les infos saisi par le user
     let prenom = $("#prenom").val();
@@ -141,4 +149,25 @@ function updateStagiaire() {
 
     //On masque le formulaire d'insertion
     $("#monForm").hide();
+}
+
+/**
+ * Permet de supprimer un stagaire de la BDD
+ * @param id
+ */
+function supprimer(id) {
+//On effectue la requete vers le server
+    $.ajax({
+        method: "POST",
+        url: "server.php",
+        data: {delete: 1, id: id}
+    }).done(function () {
+        //En cas de succes, On vide les infos du formulaire
+        $("#prenom").val('');
+        $("#email").val('');
+        $("#ville").val('');
+
+        //On appelle la fonction allStagiaires
+        allStagiaires();
+    });
 }
