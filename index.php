@@ -25,6 +25,7 @@
             gestion stagiaire
         </div>
         <form id="formStagiaire">
+            <input type="hidden" id="id"/>
             <div class="form-group">
                 <label for="prenom">Prénom</label>
                 <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrez votre prénom"/>
@@ -39,9 +40,9 @@
                 <input type="text" class="form-control" id="ville" name="prenom"
                        placeholder="Entrez votre ville de residence"/>
             </div>
-
             <div>
-                <button id="btn-valider" type="submit" class="btn btn-valider">Submit</button>
+                <button id="btn-valider" type="submit" class="btn btn-valider">Valider</button>
+                <button id="btn-modifier" type="submit" class="btn btn-valider">Modifier</button>
                 <button type="reset" class="btn btn-secondary float-right">Reset</button>
             </div>
         </form>
