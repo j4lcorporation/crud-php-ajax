@@ -63,7 +63,9 @@
                 <th scope="col" colspan="2">Actions</th>
             </tr>
             </thead>
-            <tbody id="stagiaires-body"></tbody>
+            <tbody id="stagiaires-body">
+
+            </tbody>
         </table>
     </div>
 </div>

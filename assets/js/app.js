@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     //Permet d'afficher le formulaire ajout
     $("#btn-ajouter").on('click', function () {
-        formAjout();
+        formBtnAjout();
     });
 
     //Permet d'ajouter un stagiaire
@@ -21,7 +21,6 @@ $(document).ready(function () {
     $("#btn-modifier").on('click', function () {
         updateStagiaire();
     });
-
 });
 
 /**
@@ -34,8 +33,13 @@ function allStagiaires() {
         data: {all: 1},
         dataType: "json"
     }).done(function (stagiaires) {
+        //On vide le tableau de stagiaire
         $("#stagiaires-body").empty();
+
+        //On parcours le resultat onbtenu
         stagiaires.forEach(stagiaire => {
+
+            //On construit les lignes du tableau
             $("#stagiaires-body").append(
                 `
                 <tr>
@@ -89,7 +93,7 @@ function addStagiaire() {
     $("#monForm").hide();
 }
 
-function formAjout() {
+function formBtnAjout() {
     $("#monForm").show();
     $("#btn-modifier").hide();
     $("#btn-valider").show();
@@ -98,11 +102,9 @@ function formAjout() {
     $("#prenom").val('');
     $("#email").val('');
     $("#ville").val('');
-
-
 }
 
-function formModifier() {
+function formBtnModifier() {
     $("#monForm").show();
     $("#btn-valider").hide();
     $("#btn-modifier").show();
@@ -114,7 +116,7 @@ function edit(id) {
     let email = $(`#modifier-${id}`).parent().siblings('.email').text();
     let ville = $(`#modifier-${id}`).parent().siblings('.ville').text();
 
-    formModifier();
+    formBtnModifier();
 
     $("#id").val(id);
     $("#prenom").val(prenom);
